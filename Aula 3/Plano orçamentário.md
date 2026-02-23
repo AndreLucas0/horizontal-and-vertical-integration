@@ -1,170 +1,204 @@
-# Plano Orçamentário  
+# Plano Orçamentário – Implantação de Rede Industrial  
 
 ---
 
-# 1. Introdução
+## 1. Objetivo do Plano
 
-Este documento apresenta um **plano orçamentário técnico** para implantação de uma **rede industrial** em uma indústria de produção de tijolos ecológicos.
+Este plano orçamentário tem como objetivo apresentar o levantamento técnico dos equipamentos necessários para compor a **infraestrutura de comunicação e automação** em uma indústria de produção de tijolos ecológicos.
 
-A proposta contempla:
+O documento contempla:
 
-- Levantamento técnico dos equipamentos de automação;
-- Infraestrutura de comunicação industrial;
-- Sistemas de supervisão e controle;
-- Infraestrutura elétrica e de rede;
-- Estimativa orçamentária preliminar.
-
-O objetivo é estruturar uma base tecnológica que permita **monitoramento em tempo real, controle automatizado do processo produtivo, rastreabilidade e aumento da eficiência operacional**.
-
----
-
-# 2. Caracterização do Processo Produtivo
-
-A produção de tijolos ecológicos normalmente envolve:
-
-1. Recebimento e dosagem de matéria-prima (solo, cimento e água);
-2. Mistura mecânica;
-3. Prensagem hidráulica;
-4. Cura e armazenamento;
-5. Controle de qualidade.
-
-Cada etapa exige monitoramento de variáveis como:
-
-- Peso e dosagem;
-- Umidade;
-- Pressão hidráulica;
-- Tempo de prensagem;
-- Produção por turno.
+- Identificação dos dispositivos (CLP, switches industriais, cabeamento, IHMs, fontes, etc.);
+- Pesquisa de fornecedores online no Brasil;
+- Cotação de valores;
+- Prazos de entrega estimados;
+- Especificações técnicas;
+- Análise de adequação ao ambiente industrial;
+- Avaliação da escalabilidade da solução;
+- Compatibilidade com futuras integrações com sistemas corporativos (MES/ERP);
+- Estimativa de investimento.
 
 ---
 
-# 3. Arquitetura Proposta da Rede Industrial
+## 2. Levantamento Técnico de Equipamentos
 
-## 3.1 Nível de Campo (Chão de Fábrica)
+### 2.1 Controlador Lógico Programável (CLP)
 
-Dispositivos responsáveis pela coleta de dados e atuação no processo.
+| **Equipamento** | **Origem/Fornecedor** | **Preço Estimado (R$)** | **Especificações Técnicas** | **Prazo de Entrega** |
+|------------------|-----------------------|---------------------------|-----------------------------|------------------------|
+| CLP Siemens SIMATIC S7-1200 | FourServ (distribuidor) | ~R$ 2.300,00 | CPU com comunicação Ethernet integrada, 14 I/O embarcados | 10–20 dias úteis |
+| CLP WEG CLIC02 | Orçamentos online | ~R$ 1.200–2.000 | CLP compacto até 16 I/O, programação Flow Chart | 10–30 dias úteis |
+| CLP Allen-Bradley CompactLogix | ProInd Eletrônica | R$ 7.000–15.000 | Plataforma escalável, comunicação industrial | 10–30 dias úteis |
 
-### Equipamentos Necessários
-
-| Equipamento | Quantidade Estimada | Valor Unitário (R$) | Valor Total (R$) |
-|-------------|--------------------|---------------------|------------------|
-| Sensores de umidade industrial | 4 | 1.200 | 4.800 |
-| Sensores de pressão hidráulica | 4 | 1.500 | 6.000 |
-| Células de carga (balança industrial) | 2 | 3.500 | 7.000 |
-| Sensores indutivos/fim de curso | 10 | 250 | 2.500 |
-| Atuadores/solenóides | 6 | 400 | 2.400 |
-
-**Subtotal Nível de Campo: R$ 22.700**
+✔︎ *Justificativa:* CLPs robustos e industriais permitem automação confiável e integração com redes Ethernet industriais, fundamentais para conectividade com supervisórios e sistemas corporativos.
 
 ---
 
-## 3.2 Nível de Controle (CLPs e Painéis)
+### 2.2 Switches Industriais
 
-Responsável pelo processamento lógico e controle das máquinas.
+| **Equipamento** | **Fornecedor / Fonte** | **Preço Estimado (R$)** | **Especificações** | **Prazo Entrega** |
+|------------------|------------------------|---------------------------|----------------------|--------------------|
+| Switch Industrial 8 portas | HSMA Automação | R$ 1.500 – 3.000 | 8 portas RJ45, montagem DIN | 10–20 dias úteis |
+| Switch Gerenciável Industrial 16 portas | HSMA Automação | R$ 7.000 – 15.000 | Suporte VLAN, QoS e rede segmentada | 15–30 dias úteis |
 
-| Equipamento | Quantidade | Valor Unitário (R$) | Valor Total (R$) |
-|-------------|------------|---------------------|------------------|
-| CLP modular industrial | 2 | 8.000 | 16.000 |
-| Módulos de entradas/saídas (I/O) | 4 | 2.000 | 8.000 |
-| IHMs (Interfaces Homem-Máquina) | 2 | 4.000 | 8.000 |
-| Painel elétrico industrial completo | 2 | 6.000 | 12.000 |
-
-**Subtotal Nível de Controle: R$ 44.000**
+✔︎ *Especificação:* Deve suportar **temperaturas industriais**, montagem em trilho DIN e proteção contra interferências eletromagnéticas.
 
 ---
 
-## 3.3 Rede de Comunicação Industrial
+### 2.3 Cabeamento e Conectores
 
-Proposta de rede baseada em Ethernet Industrial (ex: Profinet ou Ethernet/IP).
+| **Item** | **Fornecedor / Fonte** | **Preço Estimado** | **Especificação Técnica** |
+|------------|------------------------|----------------------|-----------------------------|
+| Cabo Ethernet Industrial CAT6 blindado | Fornecedores automação | R$ 50–80 / metro | Blindado para ruído industrial |
+| Conectores RJ45 metálicos | Fornecedores automação | R$ 10–30 / unidade | Compatível com cabo blindado |
+| Patch Panel industrial | Fornecedores automação | R$ 300–800 | Organização de cabos |
 
-| Equipamento | Quantidade | Valor Unitário (R$) | Valor Total (R$) |
-|-------------|------------|---------------------|------------------|
-| Switch industrial gerenciável | 3 | 3.000 | 9.000 |
-| Roteador industrial | 1 | 4.000 | 4.000 |
-| Cabos industriais blindados (média 500m) | 1 lote | 5.000 | 5.000 |
-| Conectores industriais | 20 | 50 | 1.000 |
-| Rack de rede | 1 | 2.500 | 2.500 |
-
-**Subtotal Comunicação: R$ 21.500**
+✔︎ *Observação:* Cabeamento blindado minimiza ruído elétrico e falhas de comunicação no ambiente industrial.
 
 ---
 
-## 3.4 Sistema Supervisório (SCADA)
+### 2.4 Interface Homem-Máquina (IHM)
 
-Permite monitoramento, histórico de dados e geração de relatórios.
+| **Item** | **Fornecedor / Fonte** | **Preço Estimado (R$)** | **Especificações** |
+|------------|------------------------|--------------------------|--------------------|
+| HMI Siemens KTP400 | FourServ | ~R$ 2.200 | Interface para supervisão local |
+| HMI Schneider Magelis | FourServ | R$ 5.500–6.500 | Tela touch com CPU embarcada |
 
-| Item | Quantidade | Valor Unitário (R$) | Valor Total (R$) |
-|------|------------|---------------------|------------------|
-| Licença SCADA | 1 | 15.000 | 15.000 |
-| Servidor industrial | 1 | 12.000 | 12.000 |
-| Estação de operação | 1 | 6.000 | 6.000 |
-| Nobreak industrial | 2 | 3.000 | 6.000 |
-
-**Subtotal Supervisão: R$ 39.000**
+IHMs permitem monitoramento e controle de parâmetros diretamente no chão de fábrica.
 
 ---
 
-## 3.5 Infraestrutura Elétrica e Segurança
+### 2.5 Fontes, Proteções e Painéis
 
-| Item | Valor Estimado (R$) |
-|------|--------------------|
-| Cabeamento elétrico | 8.000 |
-| Disjuntores e proteção elétrica | 5.000 |
-| Sistema de aterramento | 4.000 |
-| Sistema de proteção contra surtos | 3.000 |
-
-**Subtotal Infraestrutura Elétrica: R$ 20.000**
+| **Item** | **Preço Estimado (R$)** | **Descrição** |
+|------------|--------------------------|--------------|
+| Fonte industrial 24 VDC | R$ 300 – 900 | Alimentação de controladores e sensores |
+| Disjuntores e proteções | R$ 1.000 – 3.000 | Proteção elétrica do sistema |
+| Painel elétrico industrial | R$ 5.000 – 12.000 | Acomoda CLPs, fontes e equipamentos |
 
 ---
 
-## 3.6 Serviços Técnicos
+### 2.6 Software Supervisório / SCADA
 
-| Serviço | Valor Estimado (R$) |
-|----------|--------------------|
-| Projeto elétrico e de automação | 15.000 |
-| Programação CLP e SCADA | 20.000 |
-| Instalação e montagem | 18.000 |
-| Testes e comissionamento | 10.000 |
-| Treinamento operacional | 7.000 |
+| **Software** | **Fornecedor / Observação** | **Preço Estimado (R$)** | **Função** |
+|---------------|-----------------------------|--------------------------|-------------|
+| Software SCADA (ex: Elipse E3) | Distribuidores autorizados | R$ 20.000 – 50.000 | Supervisão, alarmes, histórico |
 
-**Subtotal Serviços: R$ 70.000**
+✔︎ *Observação:* Licenças podem variar conforme número de pontos a serem monitorados.
 
 ---
 
-# 4. Investimento Total Estimado
+## 3. Especificações Técnicas e Compatibilidade
 
-| Categoria | Valor (R$) |
-|------------|------------|
-| Nível de Campo | 22.700 |
-| Controle | 44.000 |
-| Comunicação | 21.500 |
-| Supervisão | 39.000 |
-| Infraestrutura Elétrica | 20.000 |
-| Serviços Técnicos | 70.000 |
+### 3.1 Ambiente Industrial
 
-## 💰 Investimento Total Estimado: **R$ 217.200**
+Os equipamentos selecionados devem possuir características para:
 
-*(Valores aproximados para fins acadêmicos/simulados.)*
+- Operação em **temperaturas elevadas e poeira**;
+- **Resistência a interferências eletromagnéticas**;
+- **Montagem em trilho DIN**;
+- **Proteção física adequada** (IP20 ou superior).
+
+Dispositivos industriais garantem durabilidade e robustez.
 
 ---
 
-# 5. Benefícios Esperados
+### 3.2 Escalabilidade da Solução
 
-- Monitoramento em tempo real da produção;
-- Redução de desperdício de matéria-prima;
-- Controle preciso da prensagem;
-- Aumento da produtividade;
-- Rastreabilidade de lotes;
-- Base para futura integração com ERP ou sistema MES.
+A solução foi concebida para permitir:
+
+- Adição de módulos I/O extra nos CLPs;
+- Segmentação de rede com switches gerenciáveis;
+- Integração futura com sensores IIoT;
+- Conexão com sistemas corporativos MES/ERP;
+- Coleta de dados via Ethernet industrial.
+
+A arquitetura garante suporte a expansão da planta sem necessidade de reestruturação.
 
 ---
 
-# 6. Retorno sobre Investimento (ROI)
+### 3.3 Compatibilidade com Sistemas Corporativos
 
-Com aumento estimado de:
+Com comunicação **Ethernet Industrial (Modbus TCP, Profinet, etc.)**, a infraestrutura facilita:
 
-- 15% na produtividade;
-- 10% de redução de desperdícios;
-- 20% de redução de paradas não planejadas;
+- Integração com MES (Manufacturing Execution System);
+- Conexão com sistema ERP;
+- Extração de dados históricos para BI (Business Intelligence).
 
-O investimento pode ser amortizado em aproximadamente **18 a 24 meses**, dependendo do volume produtivo da indústria.
+Suporte a padrões industriais é essencial para integração corporativa.
+
+---
+
+## 4. Cotações de Valores e Prazos de Entrega
+
+| **Categoria** | **Intervalo de Preço (R$)** | **Prazo Entrega Estimado** |
+|---------------|------------------------------|-----------------------------|
+| CLPs | 1.200 – 15.000 | 10–30 dias úteis |
+| Switches Industriais | 1.500 – 15.000 | 10–30 dias úteis |
+| Cabeamento e conectores | 3.000 – 10.000 | 7–20 dias úteis |
+| IHMs | 2.200 – 6.500 | 10–30 dias úteis |
+| Fontes & proteção | 6.000 – 16.000 | 7–20 dias úteis |
+| Software SCADA | 20.000 – 50.000 | 15–40 dias úteis |
+
+*(Todos os valores são estimativas com base em cotações médias de distribuidores brasileiros de automação industrial.)*
+
+---
+
+## 5. Análise da Adequação dos Equipamentos
+
+### 5.1 Adequação ao Ambiente Industrial
+
+- CLPs industriais e switches com grau de proteção garantem operação contínua;
+- Cabeamento blindado reduz falhas de comunicação em ambientes com ruído elétrico;
+- Painéis elétricos organizados protegem equipamentos contra intempéries internas.
+
+---
+
+### 5.2 Escalabilidade da Solução
+
+- CLPs modulares permitem ampliar pontos de I/O;
+- Switches gerenciáveis suportam novas VLANs e segmentação;
+- Supervisório escalável com licenças para pontos adicionais.
+
+A solução cresce com a planta sem alterações estruturais significativas.
+
+---
+
+### 5.3 Compatibilidade com Integrações Futuras
+
+Equipamentos com comunicação Ethernet industrial suportam:
+
+- Integração com MES;
+- Conexão ao ERP da empresa;
+- Exportação de dados para análises avançadas (Big Data / BI).
+
+---
+
+## 6. Estimativa Total de Investimento
+
+| **Categoria** | **Valor Estimado (R$)** |
+|----------------|--------------------------|
+| CLPs | 1.200 – 15.000 |
+| Switches Industriais | 1.500 – 15.000 |
+| Cabeamento & Conectores | 3.000 – 10.000 |
+| IHMs | 2.200 – 6.500 |
+| Fontes e Painéis | 6.000 – 16.000 |
+| Software SCADA | 20.000 – 50.000 |
+| **Total Estimado** | **R$ 33.900 – R$ 112.500** |
+
+*(Intervalo considera opções de equipamentos mais econômicos até opções mais robustas e escaláveis.)*
+
+---
+
+## 7. Conclusão
+
+O plano orçamentário apresentado oferece um panorama técnico e financeiro para a implantação de uma rede industrial em uma indústria de produção de tijolos ecológicos.
+
+A solução proposta é:
+
+- **Adequada ao ambiente industrial**;
+- **Escalável para necessidades futuras**;
+- **Compatível com integrações corporativas (MES/ERP)**;
+- **Financeiramente viável**, com base em cotações de mercado.
+
+A infraestrutura tecnológica proporcionará maior controle da produção, monitoramento em tempo real, redução de falhas e suporte à estratégia digital de manufatura da empresa.
